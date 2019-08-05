@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+  <title>폰</title>
+	  <script type="text/javascript">
+	  		//유효성 검사
+	  		function doSubmit(){
+	  			var frm = document.form1;
+	  			
+	  			if(!frm.user_name.value){
+	  				alert("이름을 입력해 주세요.");
+	  				frm.user_name.focus(); //focus:커서 깜빡임
+	  				return false; //이 함수를 빠져 나간다
+	  			}
+	  			
+	  			if(!frm.gender[0].checked && !frm.gender[1].checked){
+	  				alert("성별을 입력해 주세요.");
+	  				frm.gender[0].focus();
+	  				return false;
+	  			}
+	  			
+	  			if(frm.job.selectedIndex < 1){
+	  				alert("직업을 선택해 주세요.");
+	  				frm.job.focus();
+	  				return false;
+	  			}
+	  			
+	  			var chk = false;
+	  			
+	  			for(var i=0; i < frm.hobby.length; i++){
+	  				if(frm.hobby[i].checked){
+	  					chk=true;
+	  					break;
+	  				}
+	  			}
+	  			
+	  			if(!chk){
+	  				alert("취미를 입력해주세요.");
+	  				frm.hobby[0].focus();
+	  				return false;
+	  			}
+	  			
+	  			if(confirm("입력하신 내용이 맞습니까?")){
+	  				frm.submit();
+	  			}
+	  		}
+	  		
+	  		
+	  </script>
+ </head>
+ <body>
+ 	<form name="form1" onsubmit="doSubmit(); return false;"> <!-- return false : 메소드가 두번실행되는것을방지 -->
+ 	<!-- <form name="form1" > -->
+		<fieldset>
+			<legend>회원가입:</legend>
+			<label>이름: 
+			<input type="text" name="user_name"></label><br />
+			<hr style="border: dotted 1px ;">
+			<label>성별: 
+			<input type="radio" name="gender" value="male">남자
+			<input type="radio" name="gender" value="female">여자</label><br />
+			<hr style="border: dotted 1px ;">
+			<label>직업:
+				<select name="job">
+					<option>-------직업선택-------</option>
+					<option value="nogada">노가더</option>
+					<option value="pcbang">피돌이</option>
+					<option value="paint">뺑끼</option>
+					<option value="tile">타일</option>
+				</select>
+			</label>
+			<hr style="border: dotted 1px ;">
+				<label >취미: 
+				<input type="checkbox" name="hobby"/>축구
+				<input type="checkbox" name="hobby"/>농구
+				<input type="checkbox" name="hobby" />야구</label>
+			
+			<hr style="border: dotted 1px ;">
+				<input type="submit" value="제출" /><input type="reset" value="리셋" />
+		<hr style="border: dotted 1px ;">
+		</fieldset>
+	</form>
+	글로벌인                     글로벌인<br />
+	&lt;글로벌인&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;글로벌인<br />
+ </body>
+</html>

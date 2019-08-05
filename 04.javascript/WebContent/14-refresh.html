@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function random(n1, n2){
+			return parseInt(Math.random()*(n2-n1+1))+n1;
+		}
+		
+		function authNo(){
+			var value="";
+			for(var i =0; i<5; i++){
+				value += random(0, 45);
+			}
+			document.getElementById("auth").innerHTML = value;
+		}
+		
+		function refresh(){
+			location.reload();
+		}
+	</script>
+</head>
+<body onload="authNo()">
+	<p>고객님의 인증번호는 <strong id="auth">00000</strong>입니다.
+	<input type="button" value="인증번호 새로 받기" onclick="refresh()"/></p>
+</body>
+</html>
