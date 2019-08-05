@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+	<script type="text/javascript" > 
+	
+/* 	function sum(x, y){
+		
+		var z= x+y;
+		return z;
+	}
+	function printResult(){
+		var result = sum(10, 50);
+		var mytag = document.getElementById("question");
+		mytag.innerHTML = result;
+	}
+	
+	function printResultA(){
+		var result = "?";
+		var mytag = document.getElementById("question");
+		mytag.innerHTML = result;
+	} */
+	
+	function insertQuestion(){
+		var q= prompt("insert operator. (ex : 100+50)", "");
+		var answer = eval(q);
+		var result  = q+"="+ answer;
+		document.getElementById("question").innerHTML = result;
+	}
+	</script>
+
+</head>
+<body onload="insertQuestion()">
+	
+	<!-- <h1 onmouseover="printResult()" onmouseout="printResultA()"> 10+50= <span id="question">?</span></h1> -->
+	<!-- <!-- <input type="button" value="result" onclick="printResult()"/> --> 
+	<h1 id="question"></h1>
+	<!-- <h1 onload="printResult()"> 10+50= <span id="question">?</span></h1> -->
+
+</body>
+</html>

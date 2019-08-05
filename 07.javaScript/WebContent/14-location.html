@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript"> 
+	
+		document.write(location.href+"<br />");
+		document.write(location.host+"<br />");
+		document.write(location.hostname+"<br />");
+		document.write(location.pathname+"<br />");
+		document.write(location.port+"<br />");
+		document.write(location.search+"<br />");
+		
+		function goGoogle(){
+			if(confirm("Go To Google?")){
+				location.href="http://www.google.com";
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<a href="14-location.html?a=1&b=2#top">reload this link</a>
+	<input type="button" value="Go To Google" onclick="goGoogle()">
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		.box1{
+			margin : 10px;
+			border : 5px solid #ccc;
+			padding : 30px;
+			text-align : center;
+		}
+		
+		.box2{
+			margin : 10px;
+			border : 10px solid #ff00ff;
+			background-color : #ff0;
+			padding : 25px;
+			text-align : left;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function setFontColor(color){
+			var box = document.getElementById("box");
+			box.style.color= color;
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function setBgColor(color){
+			var box = document.getElementById("box");
+			box.style.backgroundColor = color;
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function setwidth(width){
+			var box = document.getElementById("box");
+			box.style.width = width;
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function changeClass(cls){
+			var box = document.getElementById("box").className = cls;
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function changeClass(cls){
+			var box = document.getElementById("box").className = cls;
+		}
+	</script>
+</head>
+<body>
+	as
+	<h1> css 제어하기 </h1>
+		<div id="box" class ="box2"> <h1>Test Area</h1></div>
+	<input type = "button" value="(폰트) red" onclick ="setFontColor('#f00')"/>
+	<input type = "button" value="(폰트) blue" onclick ="setBgColor('#00f')"/>
+	<input type = "button" value="width=50%" onclick ="setwidth('50%')"/>
+	<input type = "button" value="box 1 클래스 적용" onclick ="changeClass('box1')"/>
+	<input type = "button" value="box 2 클래스 적용" onclick ="changeClass('box2')"/>
+</body>
+</html>

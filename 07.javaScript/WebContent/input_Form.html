@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//유효성 검사
+		function doSubmit() {
+			 var frm = document.form1;
+			 
+			 if(!frm.user_name.value){
+				 alert("이름을 입력해주세요");
+				 frm.user_name.focus();
+				 return false;
+			 }
+			 if(!frm.gender[0].checked && !frm.gender[1].checked){
+				 alert("성별을 선택해주세요");
+				 frm.gender[0].focus(); 
+				 return false; 
+			 }
+			 if(frm.job.selectedIndex<1){ 
+				 alert("직업을 선택해주세요");
+				 frm.job.focus();
+				 return false;
+				 
+			 }
+			 
+			 var chk = false;
+			 
+			 for(var i=0 ; i<frm.hobby.length ; i++){
+				 if(frm.hobby[i].checked){
+					 chk=true;
+					 break;	
+				 }
+				
+			 }
+			 if(!chk){
+				 alert("취미를 선택해주세요");
+				 frm.hobby[2].focus();
+				 return false;
+			 }
+			 
+			 if(confirm("입력하신 내용이 맞습니까?")){
+				 frm.submit();
+				 alert("succes");
+			 }
+		}
+	
+	</script>
+	
+</head>
+<body>
+	<form name = "form1" action="input_form.html">
+	<fieldset>
+		<legend> 회원가입 </legend>
+		
+		  <label for="name">이름:</label>
+		  <input type="text" name="user_name"><br>
+		  <hr style="border-style: dashed "/>  
+		  <label for="gender">성별
+		  <input type="radio" name="gender">남자
+		
+		  <input type="radio" name="gender">여자
+		  </label><br>
+		  <hr style="border-style:dashed" />
+		  <label for="job">직업
+		  <select type="select" name="job"><br>
+		  	<option value="null">---선택하세요---</option>
+		  	<option value="프로그래머">프로그래머</option>
+		  	<option value="퍼블리셔">퍼블리셔</option>
+		  	<option value="some">??</option>
+		  </select></label><br> 
+		  <hr style="border-style:dashed"/>
+		  <label for="hobby">취미</label>
+		  <input type="checkbox" name="hobby">축구
+		  <input type="checkbox" name="hobby">농구
+		  <input type="checkbox" name="hobby">야구<br>
+		  <hr style="border-style:dashed" />
+		  <input type="button" value="제출" onclick="doSubmit();"/>
+		  <input type="reset" value="리셋"/> 
+	</fieldset>
+	</form>
+	GlobalIn                                     GlobalIn <br />
+	&lt;GlobalIn&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GlobalIn<br  />
+			
+	
+</body>
+</html>

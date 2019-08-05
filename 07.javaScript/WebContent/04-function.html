@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//함수 선언
+/* 	function sayHello(){
+		document.write("<h1>Hello.</h1>");
+		document.write("<h2>Java Script</h2>");
+	}
+	
+	sayHello(); */
+	
+	function sum(x, y){
+		var isStrx = !isNaN(x);
+		var isStry = !isNaN(y);
+		
+		if(!isStrx || !isStry){
+			return "enter a number";
+		}
+		
+		var z = parseInt(x)+parseInt(y);
+		return z ;
+		
+	}
+	function printResult(x, y){
+		var result = sum(x, y);
+		document.write("<h2>"+result+"</h2>");
+		
+	}
+	printResult(12, 24);
+	printResult("3", 5);
+	printResult("Three", "Four");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
